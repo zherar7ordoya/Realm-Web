@@ -51,5 +51,6 @@
   },
   "devDependencies": {
     "prettier": "^2.1.2"
-  }
+  },
+  "homepage" : "https://realm-web.herokuapp.com/"
 }
