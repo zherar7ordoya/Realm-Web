@@ -22,6 +22,7 @@ const createRealmApolloClient = (app) => {
       await app.currentUser.refreshCustomData();
        // TODO: Include the current user's access token in an Authorization header with 
        // every request. 
+       options.headers.Authorization = `Bearer ${app.currentUser.accessToken}`;
       return fetch(uri, options);
     },
   });
@@ -33,5 +34,10 @@ const createRealmApolloClient = (app) => {
 
 export default function RealmApolloProvider({ children }) {
    // TODO: Create an ``ApolloClient`` object that connects to your app.
+  const app = useRealmApp();
+  const [client, setClient] = React.useState(createRealmApolloClient(app));
+  React.useEffect(() => {
+    setClient(createRealmApolloClient(app));
+  }, [app]);
   return <ApolloProvider client={client}>{children}</ApolloProvider>;
-}
+}  
