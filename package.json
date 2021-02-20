@@ -52,5 +52,8 @@
   "devDependencies": {
     "prettier": "^2.1.2"
   },
-  "homepage" : "https://realm-web.herokuapp.com/"
+  "homepage" : "https://realm-web.herokuapp.com/",
+  "engines": {
+    "node": "14.13.0"
+    }
 }
