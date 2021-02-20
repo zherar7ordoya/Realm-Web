@@ -28,10 +28,10 @@
     "validator": "^13.1.1"
   },
   "scripts": {
-    "start": "react-scripts start",
+    "dev": "react-scripts start",
+    "start": "serve -s build",
     "build": "react-scripts build",
-    "test": "react-scripts test",
-    "format": "prettier --write \"**/*.js\"",
+    "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject",
     "heroku-postbuild": "npm run build"
   },
@@ -53,8 +53,8 @@
   "devDependencies": {
     "prettier": "^2.1.2"
   },
-  "homepage" : "https://realm-web.herokuapp.com/",
+  "homepage": "https://realm-web.herokuapp.com/",
   "engines": {
     "node": "14.13.0"
-    }
+  }
 }
